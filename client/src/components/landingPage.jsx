@@ -38,7 +38,7 @@ const LandingPage = () => {
 
     return () => {
       clearInterval(timer);
-      window.removeEventListener('load', handleLoad);
+      window.removeEventListener('load', handleLoad); 
     };
   }, []);
 
