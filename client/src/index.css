@@ -7,35 +7,3 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-.loader {
-  position: relative; /* Position the loader container */
-  width: 100px;
-  height: 100px;
-  margin: 20px auto; /* Center the loader */
-}
-
-.loader::after {
-  content: '';
-  position: absolute;
-  border: 8px solid #f3f3f3; /* Light gray border */
-  border-top: 8px solid #3498db; /* Blue border */
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
-  animation: spin 2s linear infinite; /* Animation properties */
-}
-
-.percentage {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 16px;
-  font-weight: bold;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); } /* Starting position */
-  100% { transform: rotate(360deg); } /* Ending position */
-}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './landingPage.css';
 
 const LandingPage = () => {
   const [percentage, setPercentage] = useState(0);
@@ -14,7 +15,7 @@ const LandingPage = () => {
           clearInterval(timer);
           setTimeout(() => {
             setIsLoadingComplete(true);
-          }, 13000); // Show loading complete for 13 seconds
+          });
           return 0;
         }
         return newPercentage;
@@ -28,9 +29,9 @@ const LandingPage = () => {
         setIsInitialLoad(false);
         setTimeout(() => {
           setIsLoadingComplete(false);
-          setIsBlurEnabled(false); // Disable blur after "Loading Complete!" disappears
-        }, 1000); // Remove "Loading Complete!" text after 1 second
-      }, 1000); // Show loading complete for 1 second
+          setIsBlurEnabled(false); // Deaktiver sløring efter "Indlæsning fuldført!" forsvinder
+        }, 1000); // Fjern teksten "Indlæsning fuldført!" efter 1 sekund
+      }, 1000); // Vis "Indlæsning fuldført!" i 1 sekund
     };
 
     window.addEventListener('load', handleLoad);
@@ -47,10 +48,10 @@ const LandingPage = () => {
   }, [isBlurEnabled]);
 
   return (
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+    <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <div id="blurred" className="content">
         {isLoadingComplete ? (
-          <h1>Loading Complete!</h1>
+          <h1>Indlæsning fuldført!</h1>
         ) : (
           <div className={`loader ${isInitialLoad ? '' : 'hidden'}`}>
             <div className="loader-content">
